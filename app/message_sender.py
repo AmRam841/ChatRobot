@@ -86,7 +86,7 @@ rsa_encrypted_key  = rsa_encrypt(AES_session_key, load_rsa_public_key())
 
 
 ################################    data     ################################
-nonce,tag,ciphertext = AES_encrypt() 1
+nonce,tag,ciphertext = AES_encrypt() 
 Encrypted_data_package = (rsa_encrypted_key , nonce , tag , ciphertext)
 #############################################################################
 
@@ -105,5 +105,5 @@ def Data_serializer(package):
 
 payload = Data_serializer(Encrypted_data_package)
 
-with open("encrypted_msg.json", "w") as f:
-    f.write(prepare_package_for_send(Encrypted_data_package))
+#with open("encrypted_msg.json", "w") as f:
+    # f.write(prepare_package_for_send(Encrypted_data_package))
